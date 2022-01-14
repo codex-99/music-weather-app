@@ -10,15 +10,15 @@ const songs = [
     {
         name: "audio1",
         title: "SiyaRam Lofi remix",
-        artist: "Yash"
+        artist: "Unknown"
     },{
         name: "audio2",
         title: "Lovely",
         artist: "Billie Eilish"
     },{
-        name: "audio1",
-        title: "SiyaRam Lofi remix",
-        artist: "Yash"
+        name: "audio3",
+        title: "Industry Baby",
+        artist: "lil nas x"
     },
 ]
 
