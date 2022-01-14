@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Poppins:wght@100;200;400;700&display=swap");
+
+/* CSS for whole page starts */
+body {
+  background: linear-gradient(to right, #a5cc82, #00467f);
+
+  font-family: "Poppins", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+}
+/* CSS for whole page ends */
+
+/* CSS for TITLE starts */
+#main {
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-right: 2px;
+  color: #302b63;
+  font-weight: 700;
+  z-index: 1;
+}
+/* CSS for TITLE ends*/
+
+/* CSS for MAP starts */
+#map {
+  width: 90%;
+  height: 80%;
+  border: 1px solid linear-gradient(to right, #a5cc82, #00467f);
+  border-radius: 20px;
+  margin-bottom: 0;
+  position: absolute;
+  margin-left: 60px;
+  margin-right: 40px;
+}
+/* CSS fot MAP ends */
