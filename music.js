@@ -28,12 +28,14 @@ const playMusic = ()=>{
     isPlay = true;
     music.play();
     play.classList.replace('fa-play', 'fa-pause');
+    play.title = 'Pause';
 }
 
 const pauseMusic = ()=>{
     isPlay = false;
     music.pause();
     play.classList.replace('fa-pause', 'fa-play');
+    play.title = 'Play';
 }
 
 play.addEventListener('click', ()=>{
