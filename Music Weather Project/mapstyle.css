@@ -19,7 +19,7 @@ body {
   text-align: center;
   padding-right: 2px;
   color: #302b63;
-  font-weight: 700;
+  font-weight: 550;
   z-index: 1;
 }
 /* CSS for TITLE ends*/
@@ -27,7 +27,7 @@ body {
 /* CSS for MAP starts */
 #map {
   width: 90%;
-  height: 80%;
+  height: 75%;
   border: 1px solid linear-gradient(to right, #a5cc82, #00467f);
   border-radius: 20px;
   margin-bottom: 0;
