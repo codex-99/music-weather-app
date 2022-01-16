@@ -27,7 +27,7 @@ body {
 /* CSS for MAP starts */
 #map {
   width: 90%;
-  height: 75%;
+  height: 70%;
   border: 1px solid linear-gradient(to right, #a5cc82, #00467f);
   border-radius: 20px;
   margin-bottom: 0;
