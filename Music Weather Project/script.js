@@ -100,3 +100,15 @@ function showWeatherData (data){
 
     weatherForecastEl.innerHTML = otherDayForcast;
 }
+
+// Adding genres according to humidity.
+let humidity = data.current;
+function getGenre(humidity) {
+  if (humidity >= 0 && humidity <= 30) {
+    return emotional;
+  } else if (humidity >= 40 && humidity <= 70) {
+    return bollywood;
+  } else {
+    return pop;
+  }
+}
