@@ -10,7 +10,7 @@ const genre = document.getElementById('genre');
 
 let progress = document.getElementById('progress')
 let total_duration = document.getElementById('duration')
-let currentTime = document.getElementById('currentTime')
+let current_time = document.getElementById('currentTime')
 
 let Genre = "Bollywood";
 
@@ -139,18 +139,31 @@ music.addEventListener('timeupdate', (event) => {
     const {currentTime, duration} = event.srcElement;
     let progress_time = (currentTime/duration) * 100;
     progress.style.width = `${progress_time}%`;
-    // if(progress_time===100){
-    //     nextSong();
-    // }
+    if(progress_time===100){
+        nextSong();
+    }
 
     let min = Math.floor(duration / 60);
     let sec = Math.floor(duration % 60);
+    if(duration){
+        if(sec<10){
+            total_duration.textContent = `${min}:0${sec}`;
+        }else{
+            total_duration.textContent = `${min}:${sec}`;
+        }
+    }
 
-    //console.log(event);
-    // console.log(min);
-    // console.log(sec);
+    let m = Math.floor(currentTime/60);
+    let s = Math.floor(currentTime%60);
 
-    total_duration.textContent = `${min}:${sec}`;
+    if(currentTime){
+        if(s<10){
+            current_time.textContent = `${m}:0${s}`;
+        }else{
+            current_time.textContent = `${m}:${s}`;
+        }
+    }
+
 
 })
 
