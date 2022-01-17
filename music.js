@@ -11,8 +11,7 @@ const genre = document.getElementById('genre');
 let progress = document.getElementById('progress')
 let total_duration = document.getElementById('duration')
 let current_time = document.getElementById('currentTime')
-
-let Genre = "Bollywood";
+const progress_div = document.getElementById('progress_div')
 
 const songList = [
     {
@@ -74,14 +73,18 @@ const songList = [
 ]
 
 let songs = [];
-for(var i=0;i<songList.length;i++){
-    var obj = songList[i];
-    if(obj.genre == Genre){
-        songs.push(obj);
-    }
-    // console.log(songs)
-}
+const API_KEY ='18710fb0650d1c749948bcd1398f12c7';
+var Genre = "Bollywood";
 
+console.log(`Genre: ${Genre}`)
+
+for(var i=0;i<songList.length;i++){
+                var obj = songList[i];
+                if(obj.genre == Genre){
+                songs.push(obj);
+                }
+
+            }
 console.log(songs);
 
 //Website functionality 
@@ -139,10 +142,6 @@ music.addEventListener('timeupdate', (event) => {
     const {currentTime, duration} = event.srcElement;
     let progress_time = (currentTime/duration) * 100;
     progress.style.width = `${progress_time}%`;
-    if(progress_time===100){
-        nextSong();
-    }
-
     let min = Math.floor(duration / 60);
     let sec = Math.floor(duration % 60);
     if(duration){
@@ -167,8 +166,6 @@ music.addEventListener('timeupdate', (event) => {
 
 })
 
-next.addEventListener('click', nextSong)
-prev.addEventListener('click', prevSong)
-
-
-
+music.addEventListener("ended", nextSong);
+next.addEventListener('click', nextSong);
+prev.addEventListener('click', prevSong);

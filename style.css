@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Poppins:wght@100;200;400;700&display=swap');
+
+
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: rgba(95, 62, 92, 0.6);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: rgb(247, 191, 191);
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #4b053391;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: rgb(233, 162, 162);
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: auto;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 7000px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+} 
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("images/3.jfif");
+    font-family: 'Poppins',sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.container{
+    padding: 20px 70px;
+    color: #fff;
+}
+.current-info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.date-container{
+    font-weight: 100;
+}
+.date-container .time{
+    font-size: 70px;
+    font-weight: 200;
+}
+.date-container #am-pm{
+    font-size: 30px;
+    margin-left: 20px;
+}
+.date-container .date{
+    font-size: 30px;;
+}
+
+.place-container{
+    text-align: end;
+}
+
+.place-container .time-zone{
+    font-size: 30px;
+    font-weight: 100'
+}
+.place-container .country{
+    font-size: 20px;
+    font-weight:500;
+}
+
+.current-info .others{
+    display:flex;
+    flex-direction: column;
+    background: rgba(50, 48, 58, 0.6);
+    margin:6px;
+    padding:20px;
+    border-radius: 20px;
+    border: 1px solid rgb(156, 65, 209);
+}
+
+.current-info .others .weather-item{
+    display:flex;
+    justify-content: space-between;
+}
+
+.future-forecast{
+    background: rgba(50, 48, 58, 0.8);
+    padding:20px;
+    position:fixed;
+    bottom: 0;
+    display: flex;
+    color:white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.future-forecast .today{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(156, 65, 209);
+    border-radius: 10px;
+    padding: 15px; 
+    background: rgba(0,0,0,0.2);
+}
+
+.future-forecast .today .day{
+    padding:5 px;
+    background-color:#6d6da1;
+    border-radius: 5px;
+    text-align: center;
+
+}
+.future-forecast .today .temp{
+    font-size: 18px;
+    padding-top: 15px;
+    
+}
+
+.future-forecast .weather-forecast{
+    display: flex;
+}
+
+.weather-forecast .weather-forecast-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border: 1px solid rgb(156, 65, 209); 
+    border-radius: 10px;
+    padding: 15px;
+    background: rgba(0,0,0,0.2);
+    
+}
+
+.weather-forecast .weather-forecast-item .day{
+    padding: 5px 15px;
+    background: #6d6da1;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.weather-forecast .weather-forecast-item .temp{
+    font-weight: 100;
+}
+
+@media only screen and (max-width:730px)
+{
+    .container{
+        padding: 20px;
+    }
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
+
+    .future-forecats .today .temp{
+        font-size: 50px;
+       
+    }
+
+    .date-container .time{
+        font-size: 50px;
+    }
+
+    .date-container #am=pm{
+        font-size: 20px;
+    }
+
+    .date-container .date{
+        font-size: 20px;
+    }
+
+    .place-container{
+        text-align: end;
+        margin-top: 15px;
+    }
+
+    .place-container .time-zone{
+        font-size: 20px;
+    }
+
+    .current-info .others{
+        padding: 12px;
+    }
+
+    .current-info .others .weather-item{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:1000px)
+{
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-x: scroll;
+    }
+}
