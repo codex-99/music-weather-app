@@ -8,7 +8,13 @@ const title = document.getElementById('title');
 const artist = document.getElementById('artist');
 const genre = document.getElementById('genre');
 
-const songs = [
+let progress = document.getElementById('progress')
+let total_duration = document.getElementById('duration')
+let currentTime = document.getElementById('currentTime')
+
+let Genre = "Bollywood";
+
+const songList = [
     {
         name: "audio1",
         title: "SiyaRam Lofi remix",
@@ -24,8 +30,59 @@ const songs = [
         title: "Industry Baby",
         artist: "lil nas x",
         genre: "Pop"
-    }
+    },{
+        name: "audio4",
+        title: "Dilli ki Ladki",
+        artist: "Tanzeel Khan",
+        genre: "Pop"
+    },{
+        name: "audio5",
+        title: "Kabhi Tumhhe",
+        artist: "Sony Music India",
+        genre: "Bollywood"
+    },{
+        name: "audio6",
+        title: "Kya tujhe abb",
+        artist: "T-Series",
+        genre: "Emotional"
+    },{
+        name: "audio7",
+        title: "Peed X Mood Swings",
+        artist: "One Touch Solutions",
+        genre: "Pop"
+    },{
+        name: "audio8",
+        title: "Bijlee Bijlee",
+        artist: "SuperHit songs",
+        genre: "Bollywood"
+    },{
+        name: "audio9",
+        title: "Manika Mage Hithe",
+        artist: "Angulia Entertainment",
+        genre: "Pop"
+    },{
+        name: "audio10",
+        title: "Aye Khuda",
+        artist: "T-Series",
+        genre: "Emotional"
+    },{
+        name: "audio11",
+        title: "Phone",
+        artist: "Mickey Singh",
+        genre: "Pop"
+    },
 ]
+
+let songs = [];
+for(var i=0;i<songList.length;i++){
+    var obj = songList[i];
+    if(obj.genre == Genre){
+        songs.push(obj);
+    }
+    // console.log(songs)
+}
+
+console.log(songs);
 
 //Website functionality 
 
@@ -50,12 +107,15 @@ play.addEventListener('click', ()=>{
 })
 
 const loadSong = (songs)=>{
-    title.textContent = songs.title;
-    artist.textContent = songs.artist;
-    genre.textContent = songs.genre;
-    music.src = `music/${songs.name}.mp3`;
-    img.src = `photos/${songs.name}.jpg`;
-    
+    //if(songs.genre == Genre){
+        title.textContent = songs.title;
+        artist.textContent = songs.artist;
+        genre.textContent = songs.genre;
+        music.src = `music/${songs.name}.mp3`;
+        img.src = `photos/${songs.name}.jpg`;
+    //}else{
+        nextSong;
+    //}
 }
 
 let songIndex = 1;
@@ -71,10 +131,31 @@ const prevSong = ()=>{
     loadSong(songs[songIndex]);
     playMusic();
 }
+loadSong(songs[0])
+
+//progress bar
+
+music.addEventListener('timeupdate', (event) => {
+    const {currentTime, duration} = event.srcElement;
+    let progress_time = (currentTime/duration) * 100;
+    progress.style.width = `${progress_time}%`;
+    // if(progress_time===100){
+    //     nextSong();
+    // }
+
+    let min = Math.floor(duration / 60);
+    let sec = Math.floor(duration % 60);
+
+    //console.log(event);
+    // console.log(min);
+    // console.log(sec);
+
+    total_duration.textContent = `${min}:${sec}`;
+
+})
 
 next.addEventListener('click', nextSong)
 prev.addEventListener('click', prevSong)
 
-loadSong(songs[0])
 
 
