@@ -1,13 +1,14 @@
-<!--THIS FILE IS WRITTEN BY SWASTIKA AND PUSHED IN SWASTIKA BRANCH
-THIS FILE ALSO INCLUDES THE NAVIGATION BAR 
-ISSUE: STILL WORKING ON THE EXACT LOCATION DISPLAY 
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="css/style1.css"> -->
     <link rel="stylesheet" href="style.css">
     <title> Weather App </title>
 </head>
@@ -37,6 +38,33 @@ ISSUE: STILL WORKING ON THE EXACT LOCATION DISPLAY
                 </div>
                 <div id="county" class="county">INDIA</div>
 
+            </div>
+            <!-- Music -->
+            <div class="main_div">
+                <div class="music_container">
+                    <h2 id="title">Happier Than Ever</h2>
+                    <h3 id="artist">Artist</h3>
+                    <h3 id="genre">Genre</h3>
+                    <audio src="music/audio.mp3"></audio>
+            
+                    <div class="progress_bar" id="progressbar">
+                        <div class="progress_duration">
+                            <div id="currentTime">0:00</div>
+                            <div id="duration">0:00</div>
+                        </div>
+                        <div class="progress_div" id="progress_div">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                    </div>
+            
+                    <!---music-controls--->
+                    <div class="music_controls">
+                        <i class="fas fa-backward" id="prev" title="Previous"></i>
+                        <i class="fas fa-play main_button" id="play" title="Play"></i>
+                        <i class="fas fa-forward" id="next" title="Next"></i>
+                    </div>
+            
+                </div>
             </div>
         </div>
         
